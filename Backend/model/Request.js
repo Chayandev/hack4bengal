@@ -55,4 +55,6 @@ const requestSchema = new Schema(
   { timestamps: true }
 );
 
+// Add indexing to optimize queries based on deadline and isClosed fields
+requestSchema.index({ deadline: 1, isClosed: 1 });
 module.exports = mongoose.model("Request", requestSchema);

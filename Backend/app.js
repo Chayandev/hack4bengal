@@ -83,4 +83,6 @@ mongoose.connect(process.env.DATABASE_URL).then(() => {
   io.on("connection", (socket) => {
     console.log("New Client Connected ✅☑️");
   });
+   // Import and start the cron jobs
+   require('./controllers/cronJobs.js'); // Ensure this is after the MongoDB connection and server start
 });
